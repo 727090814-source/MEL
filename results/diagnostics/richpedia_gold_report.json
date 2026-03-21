@@ -1,0 +1,738 @@
+{
+  "dataset": "RichpediaMEL",
+  "data_root": "D:\\project\\MEL\\indexed\\RichpediaMEL",
+  "kb_entities": 160935,
+  "qid2id_size": 160935,
+  "splits": {
+    "train": {
+      "n": 12463,
+      "gold_not_in_qid2id": 0,
+      "kb_name_vs_entities_mismatch": 214,
+      "mention_not_in_sentence": 483,
+      "duplicate_keys_in_split": 0,
+      "examples": {
+        "gold_not_in_qid2id": [],
+        "entity_name_vs_entities_field": [
+          {
+            "id": 13206,
+            "answer": "Q75897",
+            "kb_entity_name": "Nana Abrokwa",
+            "field_entities": "Nana",
+            "split": "train"
+          },
+          {
+            "id": 11603,
+            "answer": "Q71249",
+            "kb_entity_name": "Constantin von Höfler",
+            "field_entities": "Konstantin von Höfler",
+            "split": "train"
+          },
+          {
+            "id": 8405,
+            "answer": "Q62594",
+            "kb_entity_name": "Charles III Philip, Elector Palatine",
+            "field_entities": "Charles III Philip",
+            "split": "train"
+          },
+          {
+            "id": 11186,
+            "answer": "Q70203",
+            "kb_entity_name": "Duke Christian Ludwig of Mecklenburg-Schwerin",
+            "field_entities": "Duke Christian Louis of Mecklenburg",
+            "split": "train"
+          },
+          {
+            "id": 7535,
+            "answer": "Q60936",
+            "kb_entity_name": "Wilhelm IV, Duke of Bavaria",
+            "field_entities": "William IV, Duke of Bavaria",
+            "split": "train"
+          },
+          {
+            "id": 3250,
+            "answer": "Q32432",
+            "kb_entity_name": "Prince Amedeo, 1st Duke of Aosta",
+            "field_entities": "Amadeo I of Spain",
+            "split": "train"
+          },
+          {
+            "id": 6252,
+            "answer": "Q57304",
+            "kb_entity_name": "Prince Bernhard, Prince Consort of the Netherlands",
+            "field_entities": "Prince Bernhard of the Netherlands",
+            "split": "train"
+          },
+          {
+            "id": 9997,
+            "answer": "Q66553",
+            "kb_entity_name": "Princess Elisabeth Helene, Margravine of Meissen",
+            "field_entities": "Princess Elisabeth Helene of Thurn and Taxis",
+            "split": "train"
+          },
+          {
+            "id": 2367,
+            "answer": "Q23481",
+            "kb_entity_name": "Friedrich Dünnenmatt",
+            "field_entities": "Friedrich Dürrenmatt",
+            "split": "train"
+          },
+          {
+            "id": 16430,
+            "answer": "Q86044",
+            "kb_entity_name": "Duchess Helena, Hereditary Duchess of Württemberg",
+            "field_entities": "Archduchess Helena of Austria",
+            "split": "train"
+          },
+          {
+            "id": 7732,
+            "answer": "Q61281",
+            "kb_entity_name": "Heinrich Rathke",
+            "field_entities": "Martin Rathke",
+            "split": "train"
+          },
+          {
+            "id": 16754,
+            "answer": "Q86897",
+            "kb_entity_name": "Hans Friedrich Blunck",
+            "field_entities": "Hans-Friedrich Blunck",
+            "split": "train"
+          },
+          {
+            "id": 839,
+            "answer": "Q7192",
+            "kb_entity_name": "Qin Shi Huangdi",
+            "field_entities": "Qin Shi Huang",
+            "split": "train"
+          },
+          {
+            "id": 12647,
+            "answer": "Q74023",
+            "kb_entity_name": "Liudmyla Denisova",
+            "field_entities": "Lyudmyla Denisova",
+            "split": "train"
+          },
+          {
+            "id": 1464,
+            "answer": "Q11613",
+            "kb_entity_name": "Harry S Truman",
+            "field_entities": "Harry S. Truman",
+            "split": "train"
+          }
+        ],
+        "mention_not_in_sentence": [
+          {
+            "id": 6747,
+            "mentions": "Heinrich Müller may refer to:\n\nHeinrich Müller (Gestapo) (1900–1945?) head of the Nazi Gestapo 1939–1945\nHeinrich Müller (physiologist) (1820–1864) anatomist and physiologist\nHeinrich Müller (footballer born 1909) (1909–2000) Austrian football player and coach\nHeinrich Müller (footballer born 1889) (1889–1957) Swiss football player and manager\nHeinrich Müller (theologian) (1631–1675) Lutheran theologian\nHeinrich Müller (cyclist) (born 1926) Swiss cyclist\nHeinrich Anton Müller",
+            "sentence": "Heinrich Müller may refer to:\n\nHeinrich Müller (Gestapo) (1900–1945?), head of the Nazi Gestapo, 1939–1945\nHeinrich Müller (physiologist) (1820–1864), anatomist and physiologist\nHeinrich Müller (footballer, born 1909) (1909–2000), Austrian football player and coach\nHeinrich Müller (footballer, born 1889) (1889–1957), Swiss football player and manager\nHeinrich Müller (theologian) (1631–1675), Lutheran theologian\nHeinrich Müller (cyclist) (born 1926), Swiss cyclist\nHeinrich Anton Müller (1869–1930), Swiss painter.",
+            "split": "train"
+          },
+          {
+            "id": 10926,
+            "mentions": "Otto Franke is the name of:\n\nOtto Franke (sinologist) (1863–1946) German historian of China\nOtto Franke",
+            "sentence": "Otto Franke is the name of:\n\nOtto Franke (sinologist) (1863–1946), German historian of China\nOtto Franke (politician) (1877–1953), German Communist politician and labor activist.",
+            "split": "train"
+          },
+          {
+            "id": 6117,
+            "mentions": "Ernst Busch may refer to:\n\nErnst Busch (field marshal) (1885–1945) German field marshal\nErnst Busch",
+            "sentence": "Ernst Busch may refer to:\n\nErnst Busch (field marshal) (1885–1945), German field marshal\nErnst Busch (actor) (1900–1980), German singer and actor.",
+            "split": "train"
+          },
+          {
+            "id": 16336,
+            "mentions": "Franz Neumann may refer to:\n\nFranz Neumann (architect) Austrian architect\nFranz Ernst Neumann German physicist and mathematician\nFranz Leopold Neumann",
+            "sentence": "Franz Neumann may refer to:\n\nFranz Neumann (architect), Austrian architect\nFranz Ernst Neumann, German physicist and mathematician\nFranz Leopold Neumann, German-American legal scholar and theorist.",
+            "split": "train"
+          },
+          {
+            "id": 9097,
+            "mentions": "Frederick IV may refer to:\n\nFrederick IV Duke of Swabia (1145–1167)\nFrederick IV",
+            "sentence": "Frederick IV may refer to:\n\nFrederick IV, Duke of Swabia (1145–1167)\nFrederick IV, Count of Zollern (c.",
+            "split": "train"
+          },
+          {
+            "id": 1048,
+            "mentions": "John reigned for five days under the regency of his uncle Philip the Tall of France",
+            "sentence": "John reigned for five days under the regency of his uncle, Philip the Tall of France, until his death on 20 November 1316.",
+            "split": "train"
+          },
+          {
+            "id": 6697,
+            "mentions": "Florian Count Henckel von Donnersmarck",
+            "sentence": "Florian, Count Henckel von Donnersmarck (German: [ˈfloː.",
+            "split": "train"
+          },
+          {
+            "id": 14091,
+            "mentions": "Paul Fleming may refer to:\n\nPaul Fleming (footballer) (born 1967) English professional footballer\nPaul Fleming (poet) (1609–1640) German poet\nPaul Fleming (boxer) (born 1988) Australian Olympic boxer\nPaul Fleming",
+            "sentence": "Paul Fleming may refer to:\n\nPaul Fleming (footballer) (born 1967), English professional footballer\nPaul Fleming (poet) (1609–1640), German poet\nPaul Fleming (boxer) (born 1988), Australian Olympic boxer\nPaul Fleming (restaurateur), American restaurant financier and developer.",
+            "split": "train"
+          },
+          {
+            "id": 7535,
+            "mentions": "William IV (German: Wilhelm IV; 13 November 1493 – 7 March 1550) was Duke of Bavaria from 1508 to 1550 until 1545 together with his younger brother Louis X Duke of Bavaria",
+            "sentence": "William IV (German: Wilhelm IV; 13 November 1493 – 7 March 1550) was Duke of Bavaria from 1508 to 1550, until 1545 together with his younger brother Louis X, Duke of Bavaria.",
+            "split": "train"
+          },
+          {
+            "id": 15186,
+            "mentions": "Alexander I of Alexandria (died 320s) patriarch of Alexandria\nAlexander I",
+            "sentence": "Alexander I may refer to:\n\nAlexander I of Macedon, king of Macedon 495–454 BC\nAlexander I of Epirus (370–331 BC), king of Epirus\nPope Alexander I (died 115), early bishop of Rome\nPope Alexander I of Alexandria (died 320s), patriarch of Alexandria\nAlexander I of Scotland (c.",
+            "split": "train"
+          },
+          {
+            "id": 13081,
+            "mentions": "Ottilie Wilhelmine Ernestine Henriette von Goethe (born Freiin von Pogwisch; 31 October 1796 Danzig – 26 October 1872 Weimar) was a German socialite and the daughter-in-law of Johann Wolfgang von Goethe",
+            "sentence": "Baroness Ottilie Wilhelmine Ernestine Henriette von Goethe (born Freiin von Pogwisch; 31 October 1796, Danzig – 26 October 1872, Weimar) was a German socialite and the daughter-in-law of Johann Wolfgang von Goethe.",
+            "split": "train"
+          },
+          {
+            "id": 11519,
+            "mentions": "Sophus Ruge (26 March 1831 - 23 December 1903) was a German geographer and historian Ruge",
+            "sentence": "Sophus Ruge (26 March 1831 - 23 December 1903) was a German geographer and historian, Ruge studied about European discoveries and written works about Portuguese discoveries.",
+            "split": "train"
+          },
+          {
+            "id": 7188,
+            "mentions": "Henry IX (1075 – 13 December 1126) called the Black a member of the House of Welf was Duke of Bavaria",
+            "sentence": "Henry IX (1075 – 13 December 1126), called the Black, a member of the House of Welf, was Duke of Bavaria from 1120 to 1126.",
+            "split": "train"
+          },
+          {
+            "id": 2013,
+            "mentions": "Jean Marie Dongou Tsafack (born 20 April 1995) known as Dongou",
+            "sentence": "Jean Marie Dongou Tsafack (born 20 April 1995), known as Dongou, is a Cameroonian footballer who plays for Finnish club FC Honka as a forward.",
+            "split": "train"
+          },
+          {
+            "id": 15816,
+            "mentions": "Hans Hahn may refer to:\n\nHans Hahn (mathematician) (1879–1934) Austrian mathematician\nHans \"Assi\" Hahn (1914–1982) German World War II Luftwaffe flying ace\nHans von Hahn",
+            "sentence": "Hans Hahn may refer to:\n\nHans Hahn (mathematician) (1879–1934), Austrian mathematician\nHans \"Assi\" Hahn (1914–1982), German World War II Luftwaffe flying ace\nHans von Hahn (1914–1957), German Luftwaffe ace.",
+            "split": "train"
+          }
+        ]
+      }
+    },
+    "dev": {
+      "n": 1780,
+      "gold_not_in_qid2id": 0,
+      "kb_name_vs_entities_mismatch": 34,
+      "mention_not_in_sentence": 69,
+      "duplicate_keys_in_split": 0,
+      "examples": {
+        "gold_not_in_qid2id": [],
+        "entity_name_vs_entities_field": [
+          {
+            "id": 6302,
+            "answer": "Q57371",
+            "kb_entity_name": "Ilham Aliyev",
+            "field_entities": "İlham Aliyev",
+            "split": "dev"
+          },
+          {
+            "id": 2018,
+            "answer": "Q17500",
+            "kb_entity_name": "Xavi Hernández",
+            "field_entities": "Xavi",
+            "split": "dev"
+          },
+          {
+            "id": 4990,
+            "answer": "Q47950",
+            "kb_entity_name": "oscar perez",
+            "field_entities": "Carlos Vela",
+            "split": "dev"
+          },
+          {
+            "id": 6738,
+            "answer": "Q58012",
+            "kb_entity_name": "Prince Karl Anton, Prince of Hohenzollern",
+            "field_entities": "Charles Anthony, Prince of Hohenzollern",
+            "split": "dev"
+          },
+          {
+            "id": 2611,
+            "answer": "Q25658",
+            "kb_entity_name": "Linde Lindström",
+            "field_entities": "Mikko Lindström",
+            "split": "dev"
+          },
+          {
+            "id": 11303,
+            "answer": "Q70589",
+            "kb_entity_name": "Prince Wilhelm of Baden",
+            "field_entities": "Prince William of Baden",
+            "split": "dev"
+          },
+          {
+            "id": 2996,
+            "answer": "Q29284",
+            "kb_entity_name": "Jorge Manrique",
+            "field_entities": "Gómez Manrique",
+            "split": "dev"
+          },
+          {
+            "id": 12925,
+            "answer": "Q75065",
+            "kb_entity_name": "Lana Rhodes",
+            "field_entities": "Chris Snee",
+            "split": "dev"
+          },
+          {
+            "id": 5113,
+            "answer": "Q48973",
+            "kb_entity_name": "Glenn T. Seaborg",
+            "field_entities": "Glenn Seaborg",
+            "split": "dev"
+          },
+          {
+            "id": 6768,
+            "answer": "Q58067",
+            "kb_entity_name": "Princess Victoria, Duchess of Kent and Strathearn",
+            "field_entities": "Princess Victoria of Saxe-Coburg-Saalfeld",
+            "split": "dev"
+          },
+          {
+            "id": 14870,
+            "answer": "Q78746",
+            "kb_entity_name": "Anton Joseph Kerner von Marilaun",
+            "field_entities": "Anton Kerner von Marilaun",
+            "split": "dev"
+          },
+          {
+            "id": 10410,
+            "answer": "Q67734",
+            "kb_entity_name": "Julius Karl Scriba",
+            "field_entities": "Julius Scriba",
+            "split": "dev"
+          },
+          {
+            "id": 3158,
+            "answer": "Q31704",
+            "kb_entity_name": "Hákon Sigurðsson",
+            "field_entities": "Haakon Sigurdsson",
+            "split": "dev"
+          },
+          {
+            "id": 6126,
+            "answer": "Q57161",
+            "kb_entity_name": "Louis IV of Bavaria",
+            "field_entities": "Louis IV",
+            "split": "dev"
+          },
+          {
+            "id": 8226,
+            "answer": "Q62261",
+            "kb_entity_name": "Princess Theodolinde de Beauharnais of Leuchtenberg",
+            "field_entities": "Théodolinde de Beauharnais",
+            "split": "dev"
+          }
+        ],
+        "mention_not_in_sentence": [
+          {
+            "id": 14558,
+            "mentions": "Cornelius Gurlitt)\nCornelius Gurlitt (art collector) (1932–2014) grandson of the art historian inheritor of the Gurlitt Collection of artworks assembled by his father Hildebrand Gurlitt",
+            "sentence": "Cornelius Gurlitt may refer to:\n\nCornelius Gurlitt (composer) (1820–1901), German composer\nCornelius Gurlitt (art historian) (1850–1938), German art historian and architect (nephew of the elder Cornelius Gurlitt)\nCornelius Gurlitt (art collector) (1932–2014), grandson of the art historian, inheritor of the Gurlitt Collection of artworks assembled by his father Hildebrand Gurlitt.",
+            "split": "dev"
+          },
+          {
+            "id": 11743,
+            "mentions": "Juan Cristóbal Gundlach (17 July 1810 in Marburg – 14 March 1896 in Havana) born Johannes Christoph Gundlach",
+            "sentence": "Juan Cristóbal Gundlach (17 July 1810 in Marburg – 14 March 1896 in Havana), born Johannes Christoph Gundlach was a Cuban naturalist and taxonomist.",
+            "split": "dev"
+          },
+          {
+            "id": 3209,
+            "mentions": "Huang Quan may refer to:\n\nHuang Quan (general) (died 240) general during the Han dynasty and Three Kingdoms periods\nHuang Quan",
+            "sentence": "Huang Quan may refer to:\n\nHuang Quan (general) (died 240), general during the Han dynasty and Three Kingdoms periods\nHuang Quan (painter) (903–968), painter during the Five Dynasties and Song dynasty periods.",
+            "split": "dev"
+          },
+          {
+            "id": 11822,
+            "mentions": "Friedrich Philipp Immanuel Niethammer (6 March 1766 – 1 April 1848) later Ritter von Niethammer",
+            "sentence": "Friedrich Philipp Immanuel Niethammer (6 March 1766 – 1 April 1848), later Ritter von Niethammer, was a German theologian, philosopher and Lutheran educational reformer.",
+            "split": "dev"
+          },
+          {
+            "id": 8552,
+            "mentions": "Friedrich Arnold Brockhaus (4 May 1772 – 20 August 1823) was a German encyclopedia publisher and editor famed for publishing the Conversations-Lexikon which is now published as the Brockhaus",
+            "sentence": "Friedrich Arnold Brockhaus (4 May 1772 – 20 August 1823) was a German encyclopedia publisher and editor, famed for publishing the Conversations-Lexikon, which is now published as the Brockhaus encyclopedia.",
+            "split": "dev"
+          },
+          {
+            "id": 10767,
+            "mentions": "David Hollatz may refer to:\n\nDavid Hollatz (dogmatician) (1648–1713) Lutheran dogmatician\nDavid Hollatz",
+            "sentence": "David Hollatz may refer to:\n\nDavid Hollatz (dogmatician) (1648–1713), Lutheran dogmatician\nDavid Hollatz (writer) (died 1771), German Lutheran minister, grandson of the dogmatician.",
+            "split": "dev"
+          },
+          {
+            "id": 9177,
+            "mentions": "John Alston Maxton Baron Maxton",
+            "sentence": "John Alston Maxton, Baron Maxton (born 5 May 1936) is a Scottish Labour Party politician.",
+            "split": "dev"
+          },
+          {
+            "id": 12209,
+            "mentions": "Theodor Hoffmann is the name of:\n\nTheodor Hoffmann (admiral) (1935–2018) former minister of Defence of East Germany\nTheodor Hoffmann",
+            "sentence": "Theodor Hoffmann is the name of:\n\nTheodor Hoffmann (admiral) (1935–2018), former minister of Defence of East Germany\nTheodor Hoffmann (footballer) (1940–2011), German football (soccer) player.",
+            "split": "dev"
+          },
+          {
+            "id": 9388,
+            "mentions": "Otto Lehmann may refer to:\n\nOtto Lehmann (physicist) (1855–1922) German physicist\nOtto Lehmann",
+            "sentence": "Otto Lehmann may refer to:\n\nOtto Lehmann (physicist) (1855–1922), German physicist\nOtto Lehmann (movie producer) (1889–1968), German movie producer.",
+            "split": "dev"
+          },
+          {
+            "id": 13225,
+            "mentions": "Johann Gottlob Lehmann may refer to:\n\nJohann Gottlob Lehmann (scientist) (1719–1767) German scientist and geologist\nJohann Gottlob Lehmann",
+            "sentence": "Johann Gottlob Lehmann may refer to:\n\nJohann Gottlob Lehmann (scientist) (1719–1767), German scientist and geologist\nJohann Gottlob Lehmann (classicist) (1782–1837), German classicist.",
+            "split": "dev"
+          },
+          {
+            "id": 11858,
+            "mentions": "Helmuth Brückner (7 May 1896 - 12 January 1951?) was Gauleiter of the National Socialist German Workers Party (NSDAP) in Silesia from 1925 until 1934 when Brückner",
+            "sentence": "Helmuth Brückner (7 May 1896 - 12 January 1951?) was Gauleiter of the National Socialist German Workers Party (NSDAP) in Silesia from 1925 until 1934, when Brückner fell out of political favor.",
+            "split": "dev"
+          },
+          {
+            "id": 10868,
+            "mentions": "Adolf III Count of Schauenburg and Holstein (1160 – 3 January 1225) was the ruler of the Counties of Schauenburg and Holstein",
+            "sentence": "Adolf III, Count of Schauenburg and Holstein (1160 – 3 January 1225) was the ruler of the Counties of Schauenburg and Holstein.",
+            "split": "dev"
+          },
+          {
+            "id": 13401,
+            "mentions": "Adrienne Thomas may refer to:\n\nAdrienne Thomas (archivist) American archivist\nAdrienne Thomas",
+            "sentence": "Adrienne Thomas may refer to:\n\nAdrienne Thomas (archivist), American archivist\nAdrienne Thomas (novelist) (1897–1980), pseudonym of Hertha A.",
+            "split": "dev"
+          },
+          {
+            "id": 11004,
+            "mentions": "Werner Müller may refer to:\n\nWerner Müller (ethnologist) (1907–1990) German ethnologist and symbologist\nWerner Müller (musician) (1920–1998) German musician\nWerner Müller (canoeist) (born 1922) Swiss canoeist\nWerner Müller (politician) (1946–2019) German manager and politician Minister for Economics\nWerner Müller (mathematician) (born 1949) German mathematician\nWerner Müller",
+            "sentence": "Werner Müller may refer to:\n\nWerner Müller (ethnologist) (1907–1990), German ethnologist and symbologist\nWerner Müller (musician) (1920–1998), German musician\nWerner Müller (canoeist) (born 1922), Swiss canoeist\nWerner Müller (politician) (1946–2019), German manager and politician, Minister for Economics\nWerner Müller (mathematician) (born 1949), German mathematician\nWerner Müller (referee), Swiss soccer referee at the 1995–96 UEFA Cup\nWerner Mueller (sport shooter), Austrian competitor in shooting at the 1988 Summer Paralympics.",
+            "split": "dev"
+          },
+          {
+            "id": 8571,
+            "mentions": "Frederick VI Margrave of Baden-Durlach (16 November 1617 – 10 or 31 January 1677) was the Margrave of Baden-Durlach",
+            "sentence": "Frederick VI, Margrave of Baden-Durlach (16 November 1617 – 10 or 31 January 1677) was the Margrave of Baden-Durlach from 1659 until his death.",
+            "split": "dev"
+          }
+        ]
+      }
+    },
+    "test": {
+      "n": 3562,
+      "gold_not_in_qid2id": 0,
+      "kb_name_vs_entities_mismatch": 74,
+      "mention_not_in_sentence": 112,
+      "duplicate_keys_in_split": 0,
+      "examples": {
+        "gold_not_in_qid2id": [],
+        "entity_name_vs_entities_field": [
+          {
+            "id": 7405,
+            "answer": "Q60690",
+            "kb_entity_name": "Hermann von Keyserling",
+            "field_entities": "Hermann Graf Keyserling",
+            "split": "test"
+          },
+          {
+            "id": 5747,
+            "answer": "Q54351",
+            "kb_entity_name": "Lee Seung-chul",
+            "field_entities": "Lee Seung-cheol",
+            "split": "test"
+          },
+          {
+            "id": 3438,
+            "answer": "Q34970",
+            "kb_entity_name": "David Herbert Lawrence",
+            "field_entities": "D. H. Lawrence",
+            "split": "test"
+          },
+          {
+            "id": 7368,
+            "answer": "Q60601",
+            "kb_entity_name": "Princess Juliane of Saxe-Coburg and Gotha",
+            "field_entities": "Princess Juliane of Saxe-Coburg-Saalfeld",
+            "split": "test"
+          },
+          {
+            "id": 15256,
+            "answer": "Q80758",
+            "kb_entity_name": "Lee Min-ho",
+            "field_entities": "Lee Min Ho",
+            "split": "test"
+          },
+          {
+            "id": 6965,
+            "answer": "Q58788",
+            "kb_entity_name": "Princess Elisabeth, Duchess of Genoa",
+            "field_entities": "Princess Elisabeth of Saxony",
+            "split": "test"
+          },
+          {
+            "id": 10015,
+            "answer": "Q66602",
+            "kb_entity_name": "Christopher I, Margrave of Baden",
+            "field_entities": "Christopher I, Margrave of Baden-Baden",
+            "split": "test"
+          },
+          {
+            "id": 13912,
+            "answer": "Q77177",
+            "kb_entity_name": "George Enescu Gorceag",
+            "field_entities": "George Enescu",
+            "split": "test"
+          },
+          {
+            "id": 6547,
+            "answer": "Q57672",
+            "kb_entity_name": "Ernst August I, Duke of Brunswick",
+            "field_entities": "Ernest Augustus, Duke of Brunswick",
+            "split": "test"
+          },
+          {
+            "id": 11914,
+            "answer": "Q71992",
+            "kb_entity_name": "Genaro Pérez Villaamil",
+            "field_entities": "Jenaro Pérez Villaamil",
+            "split": "test"
+          },
+          {
+            "id": 9703,
+            "answer": "Q65760",
+            "kb_entity_name": "Gustav Samuel Leopold, Duke of Zweibrücken",
+            "field_entities": "Gustav, Duke of Zweibrücken",
+            "split": "test"
+          },
+          {
+            "id": 7286,
+            "answer": "Q60429",
+            "kb_entity_name": "Chandrasekhara Venkata Raman",
+            "field_entities": "C. V. Raman",
+            "split": "test"
+          },
+          {
+            "id": 13674,
+            "answer": "Q76736",
+            "kb_entity_name": "Charles VII, Holy Roman Emperor",
+            "field_entities": "Charles VII",
+            "split": "test"
+          },
+          {
+            "id": 15335,
+            "answer": "Q81531",
+            "kb_entity_name": "Jung Chan",
+            "field_entities": "Jeong Chan",
+            "split": "test"
+          },
+          {
+            "id": 5152,
+            "answer": "Q49128",
+            "kb_entity_name": "Drew Faust",
+            "field_entities": "Drew Gilpin Faust",
+            "split": "test"
+          }
+        ],
+        "mention_not_in_sentence": [
+          {
+            "id": 9534,
+            "mentions": "Johannes Schmidt may refer to:\n\nJohannes Schmidt (linguist) (1843–1901) German linguist\nJohannes Schmidt (biologist) (1877–1933) Danish biologist\nJohannes Schmidt",
+            "sentence": "Johannes Schmidt may refer to:\n\nJohannes Schmidt (linguist) (1843–1901), German linguist\nJohannes Schmidt (biologist) (1877–1933), Danish biologist\nJohannes Schmidt (SS)  (1908–1976), German Sturmbannführer.",
+            "split": "test"
+          },
+          {
+            "id": 5362,
+            "mentions": "Pietro Magni may refer to:\n\nPietro Magni (sculptor) (1817–1877) Italian sculptor\nPietro Magni (engineer) (1898–1988) Italian aeronautical engineer\nPietro Magni",
+            "sentence": "Pietro Magni may refer to:\n\nPietro Magni (sculptor) (1817–1877), Italian sculptor\nPietro Magni (engineer) (1898–1988), Italian aeronautical engineer\nPietro Magni (footballer) (1919–1992), Italian footballer and football manager.",
+            "split": "test"
+          },
+          {
+            "id": 12872,
+            "mentions": "Martin Fowler may refer to:\n\nMartin Fowler (footballer) (born 1957) English footballer\nMartin Fowler (software engineer) (born 1963) British information technology author and speaker\nMartin Fowler",
+            "sentence": "Martin Fowler may refer to:\n\nMartin Fowler (footballer) (born 1957), English footballer\nMartin Fowler (software engineer) (born 1963), British information technology author and speaker\nMartin Fowler (EastEnders), fictional soap opera character.",
+            "split": "test"
+          },
+          {
+            "id": 9778,
+            "mentions": "Hans Beimler is the name of:\n\nHans Beimler (communist) (1895–1936) German Communist Party deputy who fought in the Spanish Civil War\nHans Beimler",
+            "sentence": "Hans Beimler is the name of:\n\nHans Beimler (communist) (1895–1936), German Communist Party deputy who fought in the Spanish Civil War\nHans Beimler (screenwriter) (born 1953), writer for the TV series Star Trek.",
+            "split": "test"
+          },
+          {
+            "id": 9998,
+            "mentions": "Lazarus von Schwendi Barón de Hohenlandsberg (Hungarian: Schwendi",
+            "sentence": "Lazarus von Schwendi, Barón de Hohenlandsberg (Hungarian: Schwendi Lázár; 1522, Mittelbiberach – 28 May 1583, Ehrenkirchen) was an Austrian military commander and general in the Imperial Army of the Holy Roman Empire.",
+            "split": "test"
+          },
+          {
+            "id": 1425,
+            "mentions": "Karl Brown may refer to:\n\nKarl Brown (cricketer) (born 1988) English cricketer\nKarl Brown (cinematographer) (1896–1990) pioneer American cinematographer\nKarl Brown member of the 1980s music group Automatic Pilot\nKarl 'Tuff Enuff' Brown",
+            "sentence": "Karl Brown may refer to:\n\nKarl Brown (cricketer) (born 1988), English cricketer\nKarl Brown (cinematographer) (1896–1990), pioneer American cinematographer\nKarl Brown, member of the 1980s music group Automatic Pilot\nKarl 'Tuff Enuff' Brown, UK garage DJ from Double Trouble and Tuff Jam.",
+            "split": "test"
+          },
+          {
+            "id": 7368,
+            "mentions": "Princess Juliane Henriette Ulrike of Saxe-Coburg-Saalfeld (Coburg 23 September 1781 – Elfenau near Bern Switzerland 12 August 1860) also known as Grand Duchess Anna Feodorovna of Russia (Russian: Анна Фёдоровна) was a German princess of the ducal house of Saxe-Coburg-Saalfeld",
+            "sentence": "Princess Juliane Henriette Ulrike of Saxe-Coburg-Saalfeld (Coburg, 23 September 1781 – Elfenau, near Bern, Switzerland, 12 August 1860), also known as Grand Duchess Anna Feodorovna of Russia (Russian: Анна Фёдоровна), was a German princess of the ducal house of Saxe-Coburg-Saalfeld (after 1826, the house of Saxe-Coburg-Gotha) who became the wife of Grand Duke Konstantin Pavlovich of Russia.",
+            "split": "test"
+          },
+          {
+            "id": 16607,
+            "mentions": "Hans Krebs is the name of:\n\nHans Krebs (SS general) (1888–1947) Austro-Czech legislator\nHans Krebs (Wehrmacht general) (1898–1945) German infantry commander during World War II\nHans Adolf Krebs",
+            "sentence": "Hans Krebs is the name of:\n\nHans Krebs (SS general) (1888–1947), Austro-Czech legislator\nHans Krebs (Wehrmacht general) (1898–1945), German infantry commander during World War II\nHans Adolf Krebs (1900–1981), German-born British physician and biochemist.",
+            "split": "test"
+          },
+          {
+            "id": 11218,
+            "mentions": "Friedrich Balduin Baron von Gagern",
+            "sentence": "Friedrich Balduin, Baron von Gagern (1794–1848) was a German soldier.",
+            "split": "test"
+          },
+          {
+            "id": 9200,
+            "mentions": "Peter Stein (born 1 October 1937) is a German theatre and opera director who established himself at the Schaubühne am Lehniner Platz a company that Stein",
+            "sentence": "Peter Stein (born 1 October 1937) is a German theatre and opera director who established himself at the Schaubühne am Lehniner Platz, a company that Stein brought to the forefront of German theatre.",
+            "split": "test"
+          },
+          {
+            "id": 11011,
+            "mentions": "Uschi Glas (born Helga Ursula Glas; 2 March 1944) sometimes credited as Ursula Glas",
+            "sentence": "Uschi Glas (born Helga Ursula Glas; 2 March 1944), sometimes credited as Ursula Glas, is a German actress in film, television and on stage, and a singer.",
+            "split": "test"
+          },
+          {
+            "id": 10471,
+            "mentions": "Johann Adolf I Duke of Saxe-Weissenfels",
+            "sentence": "He was the third child and first surviving son of Johann Adolf I, Duke of Saxe-Weissenfels, by his first wife, Johanna Magdalena of Saxe-Altenburg.",
+            "split": "test"
+          },
+          {
+            "id": 9142,
+            "mentions": "Barbara of Brandenburg may refer to:\n\nBarbara of Brandenburg Marquise of Mantua (1422–1481)\nBarbara of Brandenburg (1464–1515) Queen of Bohemia\nBarbara of Brandenburg-Ansbach-Kulmbach (1495–1552)\nBarbara of Brandenburg",
+            "sentence": "Barbara of Brandenburg may refer to:\n\nBarbara of Brandenburg, Marquise of Mantua (1422–1481)\nBarbara of Brandenburg (1464–1515), Queen of Bohemia\nBarbara of Brandenburg-Ansbach-Kulmbach (1495–1552)\nBarbara of Brandenburg, Duchess of Brieg  (1527–1595).",
+            "split": "test"
+          },
+          {
+            "id": 13788,
+            "mentions": "Pavel Alekseyevich Cherenkov (Russian: Па́вел Алексе́евич Черенко́в [ˈpavʲɪɫ ɐlʲɪˈksʲeɪvʲɪtɕ tɕɪrʲɪnˈkof]  July 28 1904 – January 6 1990) was a Soviet physicist who shared the Nobel Prize in physics in 1958 with Ilya Frank and Igor Tamm for the discovery of Cherenkov",
+            "sentence": "Pavel Alekseyevich Cherenkov (Russian: Па́вел Алексе́евич Черенко́в [ˈpavʲɪɫ ɐlʲɪˈksʲeɪvʲɪtɕ tɕɪrʲɪnˈkof],  July 28, 1904 – January 6, 1990) was a Soviet physicist who shared the Nobel Prize in physics in 1958 with Ilya Frank and Igor Tamm for the discovery of Cherenkov radiation, made in 1934.",
+            "split": "test"
+          },
+          {
+            "id": 10103,
+            "mentions": "Louis Frederick I of Schwarzburg-Rudolstadt (25 October 1667 in Rudolstadt – 24 June 1718 in Rudolstadt) was the ruling prince of Schwarzburg-Rudolstadt",
+            "sentence": "Louis Frederick I of Schwarzburg-Rudolstadt (25 October 1667 in Rudolstadt – 24 June 1718, in Rudolstadt) was the ruling prince of Schwarzburg-Rudolstadt, Count of Hohenstein, Lord of Rudolstadt, Blankenburg and Sondershausen from 1710 until his death.",
+            "split": "test"
+          }
+        ]
+      }
+    }
+  },
+  "cross_split_duplicate_keys": 0,
+  "cross_split_duplicate_examples": [],
+  "mention_image_files": {
+    "rows_with_path": 15852,
+    "missing_file": 15852,
+    "examples": [
+      {
+        "split": "train",
+        "id": 14070,
+        "path": "mention_14070.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_14070.jpg"
+      },
+      {
+        "split": "train",
+        "id": 9048,
+        "path": "mention_9048.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_9048.jpg"
+      },
+      {
+        "split": "train",
+        "id": 3973,
+        "path": "mention_3973.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_3973.jpg"
+      },
+      {
+        "split": "train",
+        "id": 15156,
+        "path": "mention_15156.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_15156.jpg"
+      },
+      {
+        "split": "train",
+        "id": 12493,
+        "path": "mention_12493.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_12493.jpg"
+      },
+      {
+        "split": "train",
+        "id": 13206,
+        "path": "mention_13206.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_13206.jpg"
+      },
+      {
+        "split": "train",
+        "id": 3995,
+        "path": "mention_3995.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_3995.jpg"
+      },
+      {
+        "split": "train",
+        "id": 11614,
+        "path": "mention_11614.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_11614.jpg"
+      },
+      {
+        "split": "train",
+        "id": 4417,
+        "path": "mention_4417.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_4417.jpg"
+      },
+      {
+        "split": "train",
+        "id": 2890,
+        "path": "mention_2890.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_2890.jpg"
+      },
+      {
+        "split": "train",
+        "id": 5261,
+        "path": "mention_5261.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_5261.jpg"
+      },
+      {
+        "split": "train",
+        "id": 2829,
+        "path": "mention_2829.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_2829.jpg"
+      },
+      {
+        "split": "train",
+        "id": 418,
+        "path": "mention_418.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_418.jpg"
+      },
+      {
+        "split": "train",
+        "id": 1893,
+        "path": "mention_1893.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_1893.jpg"
+      },
+      {
+        "split": "train",
+        "id": 10963,
+        "path": "mention_10963.jpg",
+        "resolved": "indexed\\RichpediaMEL\\mention_10963.jpg"
+      }
+    ]
+  },
+  "verdict_notes": [
+    "所有划分的 gold QID 均在 qid2id / KB 映射内（无 OOV 标签）。",
+    "kb_entity.entity_name 与样本字段 entities 不一致的条数见各 split 的 kb_name_vs_entities_mismatch；多为别名/消歧写法差异，不代表 gold QID 错误。",
+    "mentions 未以子串形式出现在 sentence 中的条数见 mention_not_in_sentence；可能为多词提及、标点或标注口径导致，需抽样人工看句。"
+  ]
+}

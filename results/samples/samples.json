@@ -1,0 +1,430 @@
+{
+  "dataset": "RichpediaMEL",
+  "data_root": "D:\\project\\MEL\\indexed\\RichpediaMEL",
+  "n": 20,
+  "seed": 42,
+  "samples": [
+    {
+      "split": "train",
+      "mention_id": 5597,
+      "mention_surface": "Staaff",
+      "sentence": "Staaff had to bite the lemon, and the ship was ordered.",
+      "imgPath": "mention_5597.jpg",
+      "gold_qid": "Q53292",
+      "field_entities": "Karl Staaff",
+      "gold_entity": {
+        "id": 1907,
+        "qid": "Q53292",
+        "type": "entity",
+        "entity_name": "Karl Staaff",
+        "attr": "Gender male. Occupation politician lawyer",
+        "desc": "Swedish 20th century prime minister (1860-1915)",
+        "instance": "human",
+        "image_list": [
+          "Q53292_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 17605,
+      "mention_surface": "Lena Malkus",
+      "sentence": "Lena Malkus (born 6 August 1993 in Bremen) is a German long jumper.",
+      "imgPath": "mention_17605.jpg",
+      "gold_qid": "Q88991",
+      "field_entities": "Lena Malkus",
+      "gold_entity": {
+        "id": 62814,
+        "qid": "Q88991",
+        "type": "entity",
+        "entity_name": "Lena Malkus",
+        "attr": "Gender female. Occupation athletics competitor",
+        "desc": "German long jumper",
+        "instance": "human",
+        "image_list": [
+          "Q88991_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 14234,
+      "mention_surface": "Atiye",
+      "sentence": "Atiye releases songs in Turkish and English.",
+      "imgPath": "mention_14234.jpg",
+      "gold_qid": "Q77662",
+      "field_entities": "Atiye",
+      "gold_entity": {
+        "id": 50370,
+        "qid": "Q77662",
+        "type": "entity",
+        "entity_name": "Atiye",
+        "attr": "Gender female. Occupation singer songwriter",
+        "desc": "Turkish singer",
+        "instance": "human",
+        "image_list": [
+          "Q77662_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 17071,
+      "mention_surface": "Wolfgang Kieling",
+      "sentence": "Wolfgang Kieling (16 March 1924 – 7 October 1985) was a German actor.",
+      "imgPath": "mention_17071.jpg",
+      "gold_qid": "Q87571",
+      "field_entities": "Wolfgang Kieling",
+      "gold_entity": {
+        "id": 61702,
+        "qid": "Q87571",
+        "type": "entity",
+        "entity_name": "Wolfgang Kieling",
+        "attr": "Gender male. Occupation dub actor film actor",
+        "desc": "German actor (1924-1985)",
+        "instance": "human",
+        "image_list": [
+          "Q87571_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 4163,
+      "mention_surface": "XVI",
+      "sentence": "\"  XVI encouraged missionary activity abroad and condemned the slave trade.",
+      "imgPath": "mention_4163.jpg",
+      "gold_qid": "Q43734",
+      "field_entities": "Gregory XVI",
+      "gold_entity": {
+        "id": 144668,
+        "qid": "Q43734",
+        "type": "entity",
+        "entity_name": "Gregory XVI",
+        "attr": "Gender male. Occupation Catholic priest",
+        "desc": "pope of the Catholic Church from 1831 to 1846",
+        "instance": "human",
+        "image_list": [
+          "Q43734_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 13538,
+      "mention_surface": "Gerstein",
+      "sentence": "Gerstein died of an alleged suicide while in French custody.",
+      "imgPath": "mention_13538.jpg",
+      "gold_qid": "Q76537",
+      "field_entities": "Kurt Gerstein",
+      "gold_entity": {
+        "id": 48743,
+        "qid": "Q76537",
+        "type": "entity",
+        "entity_name": "Kurt Gerstein",
+        "attr": "Gender male. Occupation military personnel engineer",
+        "desc": "SS officer; aid to Nazi resistance",
+        "instance": "human",
+        "image_list": [
+          "Q76537_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 16942,
+      "mention_surface": "Meyer-Hetling",
+      "sentence": "Meyer-Hetling is best known for his involvement in the development of Generalplan Ost.",
+      "imgPath": "mention_16942.jpg",
+      "gold_qid": "Q87302",
+      "field_entities": "Konrad Meyer-Hetling",
+      "gold_entity": {
+        "id": 61452,
+        "qid": "Q87302",
+        "type": "entity",
+        "entity_name": "Konrad Meyer-Hetling",
+        "attr": "Gender male. Occupation university teacher writer",
+        "desc": "SS Officer (1901-1973)",
+        "instance": "human",
+        "image_list": [
+          "Q87302_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 8560,
+      "mention_surface": "Sutherland",
+      "sentence": "Sutherland is a member of the National Academy of Engineering, as well as the National Academy of Sciences among many other major awards.",
+      "imgPath": "mention_8560.jpg",
+      "gold_qid": "Q62866",
+      "field_entities": "Ivan Sutherland",
+      "gold_entity": {
+        "id": 21643,
+        "qid": "Q62866",
+        "type": "entity",
+        "entity_name": "Ivan Sutherland",
+        "attr": "Gender male. Occupation computer scientist inventor",
+        "desc": "American computer scientist and Internet pioneer",
+        "instance": "human",
+        "image_list": [
+          "Q62866_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "dev",
+      "mention_id": 11659,
+      "mention_surface": "Kramp-Karrenbauer",
+      "sentence": "Kramp-Karrenbauer is the second woman to hold the office of German defence minister.",
+      "imgPath": "mention_11659.jpg",
+      "gold_qid": "Q71359",
+      "field_entities": "Annegret Kramp-Karrenbauer",
+      "gold_entity": {
+        "id": 38417,
+        "qid": "Q71359",
+        "type": "entity",
+        "entity_name": "Annegret Kramp-Karrenbauer",
+        "attr": "Gender female. Occupation politician",
+        "desc": "German politician, former federal minister of defence",
+        "instance": "human",
+        "image_list": [
+          "Q71359_0.jpg",
+          "Q71359_1.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 13783,
+      "mention_surface": "Caroline",
+      "sentence": "As a young woman, Caroline was much sought-after as a bride.",
+      "imgPath": "mention_13783.jpg",
+      "gold_qid": "Q76961",
+      "field_entities": "Caroline of Ansbach",
+      "gold_entity": {
+        "id": 49429,
+        "qid": "Q76961",
+        "type": "entity",
+        "entity_name": "Caroline of Ansbach",
+        "attr": "Gender female. ",
+        "desc": "queen of Great Britain (1683-1737)",
+        "instance": "human",
+        "image_list": [
+          "Q76961_0.jpg",
+          "Q76961_1.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 3040,
+      "mention_surface": "Graham Jonathan Zusi",
+      "sentence": "Graham Jonathan Zusi (; born August 18, 1986) is an American soccer player who currently plays as a midfielder or defender for Sporting Kansas City and the United States national team.",
+      "imgPath": "mention_3040.jpg",
+      "gold_qid": "Q29708",
+      "field_entities": "Graham Zusi",
+      "gold_entity": {
+        "id": 123912,
+        "qid": "Q29708",
+        "type": "entity",
+        "entity_name": "Graham Zusi",
+        "attr": "Gender male. Occupation association football player",
+        "desc": "American soccer player",
+        "instance": "human",
+        "image_list": [
+          "Q29708_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 2895,
+      "mention_surface": "Gunsbourg",
+      "sentence": "In Moscow Gunsbourg met German composer Richard Wagner.",
+      "imgPath": "mention_2895.jpg",
+      "gold_qid": "Q28265",
+      "field_entities": "Raoul Gunsbourg",
+      "gold_entity": {
+        "id": 120958,
+        "qid": "Q28265",
+        "type": "entity",
+        "entity_name": "Raoul Gunsbourg",
+        "attr": "Gender male. Occupation composer writer",
+        "desc": "opera director, impresario, composer and writer",
+        "instance": "human",
+        "image_list": [
+          "Q28265_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 4199,
+      "mention_surface": "Tim Clancy (born 8 June 1984) is an Irish football manager who is in charge of League of Ireland side Drogheda United During his playing career Clancy",
+      "sentence": "Tim Clancy (born 8 June 1984) is an Irish football manager who is in charge of League of Ireland side Drogheda United During his playing career, Clancy played for Millwall, Walton & Hersham, Weymouth, Fisher Athletic, Kilmarnock, Motherwell, Hibernian, St Johnstone, Shamrock Rovers, Sligo Rovers and Bray Wanderers.",
+      "imgPath": "mention_4199.jpg",
+      "gold_qid": "Q43893",
+      "field_entities": "Tim Clancy",
+      "gold_entity": {
+        "id": 144835,
+        "qid": "Q43893",
+        "type": "entity",
+        "entity_name": "Tim Clancy",
+        "attr": "Gender male. Occupation association football player",
+        "desc": "Irish footballer",
+        "instance": "human",
+        "image_list": [
+          "Q43893_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 4854,
+      "mention_surface": "Babbage",
+      "sentence": "Babbage is considered by some to be \"father of the computer\".",
+      "imgPath": "mention_4854.jpg",
+      "gold_qid": "Q46633",
+      "field_entities": "Charles Babbage",
+      "gold_entity": {
+        "id": 147720,
+        "qid": "Q46633",
+        "type": "entity",
+        "entity_name": "Charles Babbage",
+        "attr": "Gender male. Occupation mathematician computer scientist",
+        "desc": "English mathematician, philosopher, inventor and mechanical engineer who originated the concept of a programmable computer (1791-1871)",
+        "instance": "human",
+        "image_list": [
+          "Q46633_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "mention_id": 15076,
+      "mention_surface": "Homolka",
+      "sentence": "By the age of 30, Homolka had appeared in more than 400 plays; his film career covered at least 100 films and TV shows.",
+      "imgPath": "mention_15076.jpg",
+      "gold_qid": "Q79044",
+      "field_entities": "Oskar Homolka",
+      "gold_entity": {
+        "id": 52499,
+        "qid": "Q79044",
+        "type": "entity",
+        "entity_name": "Oskar Homolka",
+        "attr": "Gender male. Occupation actor stage actor",
+        "desc": "Austrian actor (1898–1978)",
+        "instance": "human",
+        "image_list": [
+          "Q79044_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 6992,
+      "mention_surface": "Kahr",
+      "sentence": "In revenge for the latter, Kahr was murdered later in the 1934 Night of the Long Knives.",
+      "imgPath": "mention_6992.jpg",
+      "gold_qid": "Q58860",
+      "field_entities": "Gustav Ritter von Kahr",
+      "gold_entity": {
+        "id": 15883,
+        "qid": "Q58860",
+        "type": "entity",
+        "entity_name": "Gustav Ritter von Kahr",
+        "attr": "Gender male. Occupation politician judge",
+        "desc": "German politician (1862-1934)",
+        "instance": "human",
+        "image_list": [
+          "Q58860_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 5579,
+      "mention_surface": "Pastrone",
+      "sentence": "Pastrone died in Turin on 27 June 1959.",
+      "imgPath": "mention_5579.jpg",
+      "gold_qid": "Q53043",
+      "field_entities": "Giovanni Pastrone",
+      "gold_entity": {
+        "id": 1475,
+        "qid": "Q53043",
+        "type": "entity",
+        "entity_name": "Giovanni Pastrone",
+        "attr": "Gender male. Occupation film director actor",
+        "desc": "Italian film pioneer, director, screenwriter, actor and technician (1883-1959)",
+        "instance": "human",
+        "image_list": [
+          "Q53043_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "dev",
+      "mention_id": 11651,
+      "mention_surface": "Feige",
+      "sentence": "Feige succeeded Leo Nowak.",
+      "imgPath": "mention_11651.jpg",
+      "gold_qid": "Q71346",
+      "field_entities": "Gerhard Feige",
+      "gold_entity": {
+        "id": 38403,
+        "qid": "Q71346",
+        "type": "entity",
+        "entity_name": "Gerhard Feige",
+        "attr": "Gender male. Occupation theologian Catholic priest",
+        "desc": "German Roman Catholic bishop",
+        "instance": "human",
+        "image_list": [
+          "Q71346_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "mention_id": 15979,
+      "mention_surface": "Michelides",
+      "sentence": "Michelides is the director of Lighthouse Wien.",
+      "imgPath": "mention_15979.jpg",
+      "gold_qid": "Q84917",
+      "field_entities": "Christian Michelides",
+      "gold_entity": {
+        "id": 59132,
+        "qid": "Q84917",
+        "type": "entity",
+        "entity_name": "Christian Michelides",
+        "attr": "Gender male. Occupation psychotherapist journalist",
+        "desc": "Austrian psychotherapist",
+        "instance": "human",
+        "image_list": [
+          "Q84917_0.jpg"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "mention_id": 6483,
+      "mention_surface": "Rendulic",
+      "sentence": "After his release in 1951 Rendulic took up writing.",
+      "imgPath": "mention_6483.jpg",
+      "gold_qid": "Q57585",
+      "field_entities": "Lothar Rendulic",
+      "gold_entity": {
+        "id": 13214,
+        "qid": "Q57585",
+        "type": "entity",
+        "entity_name": "Lothar Rendulic",
+        "attr": "Gender male. Occupation military personnel politician",
+        "desc": "German general (1887-1971)",
+        "instance": "human",
+        "image_list": [
+          "Q57585_0.jpg"
+        ]
+      }
+    }
+  ]
+}
