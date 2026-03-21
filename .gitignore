@@ -1,20 +1,15 @@
+# 仅跟踪 indexed、embedding_clip、scripts、results；其余路径保持未跟踪
+*
+!.gitignore
+!.gitattributes
+!indexed/
+!indexed/**
+!embedding_clip/
+!embedding_clip/**
+!scripts/
+!scripts/**
+!results/
+!results/**
+
 __pycache__/
 *.py[cod]
-*$py.class
-.Python
-.venv/
-venv/
-*.egg-info/
-.eggs/
-dist/
-build/
-
-.idea/
-
-# Large / regeneratable (GitHub blocks files >100MB; full dataset is multi-GB).
-# Use Git LFS, Releases, or cloud storage for these; remove a line below only if you track via LFS.
-/data/
-/image/
-/embedding_clip/
-/embedding_hash/
-/results/
