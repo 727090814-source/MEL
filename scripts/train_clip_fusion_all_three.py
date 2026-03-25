@@ -26,11 +26,11 @@ if str(_SCRIPT_DIR) not in sys.path:
 
 from train_clip_fusion_contrastive import run_fusion_training  # noqa: E402
 
-# (dataset, candidate_json, lr, weight_decay)
+# (dataset, candidate_json, lr, weight_decay) — 三数据集统一 lr=1e-3, wd=1e-4
 CONFIG = [
     ("WikiMEL", "results/clip_retrieve/WikiMEL/candidate-100.json", 1e-3, 1e-4),
-    ("WikiDiverse", "results/clip_retrieve/WikiDiverse/candidate-100.json", 5e-4, 5e-4),
-    ("RichpediaMEL", "results/clip_retrieve/RichpediaMEL/candidate-100.json", 5e-4, 5e-4),
+    ("WikiDiverse", "results/clip_retrieve/WikiDiverse/candidate-100.json", 1e-3, 1e-4),
+    ("RichpediaMEL", "results/clip_retrieve/RichpediaMEL/candidate-100.json", 1e-3, 1e-4),
 ]
 
 
@@ -45,7 +45,7 @@ def main():
     p.add_argument("--max_negs", type=int, default=100)
     p.add_argument("--device", type=str, default="auto")
     p.add_argument("--retrieval_batch", type=int, default=256)
-    p.add_argument("--k_values", type=str, default="1,5,10")
+    p.add_argument("--k_values", type=str, default="1,5,10,30,100")
     args = p.parse_args()
 
     summary: dict = {}

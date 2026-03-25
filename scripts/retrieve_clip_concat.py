@@ -3,15 +3,21 @@
 Multimodal retrieval without training: concat CLIP text + image embeddings (512+512=1024),
 L2-normalize, cosine retrieval over all KB entities.
 
+With --text_only: only CLIP text vectors (mention vs KB entity text).
+
+With --image_only: only CLIP image vectors (mention image vs KB entity image; missing
+images are stored as zeros in run_embedding_clip_mel — those rows retrieve with flat scores).
+
 Outputs (aligned with utils/evaluate.generate_candidate_preds structure):
-  results/clip_retrieve/{dataset}/candidate-{K}.json
+  {out_root}/{dataset}/candidate-{K}.json
     { "train"|"val"|"test": { "answer", "mention_key", "candidate", "rank" } }
-  results/clip_retrieve/{dataset}/metrics.json
+  {out_root}/{dataset}/metrics.json
     hits@k, MRR per split
 
 Requires embedding_clip/{dataset}/ from scripts/run_embedding_clip_mel.py:
-  entity_text.pt, entity_img.pt, mention_text.pt, mention_img.pt,
-  entity_qid2idx.json, mention_key2idx.json
+  entity_qid2idx.json, mention_key2idx.json always;
+  entity_text.pt + mention_text.pt for concat or --text_only;
+  entity_img.pt + mention_img.pt for concat or --image_only.
 """
 
 from __future__ import annotations
@@ -199,20 +205,26 @@ def run_dataset(
     batch_size: int,
     device: torch.device,
     k_values: List[int],
+    text_only: bool = False,
+    image_only: bool = False,
 ) -> None:
     ds_root = data_root / dataset
     emb_dir = embed_root / dataset
     out_dir = out_root / dataset
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    req = [
-        emb_dir / "entity_text.pt",
-        emb_dir / "entity_img.pt",
-        emb_dir / "mention_text.pt",
-        emb_dir / "mention_img.pt",
-        emb_dir / "entity_qid2idx.json",
-        emb_dir / "mention_key2idx.json",
-    ]
+    maps = [emb_dir / "entity_qid2idx.json", emb_dir / "mention_key2idx.json"]
+    if text_only:
+        req = maps + [emb_dir / "entity_text.pt", emb_dir / "mention_text.pt"]
+    elif image_only:
+        req = maps + [emb_dir / "entity_img.pt", emb_dir / "mention_img.pt"]
+    else:
+        req = maps + [
+            emb_dir / "entity_text.pt",
+            emb_dir / "mention_text.pt",
+            emb_dir / "entity_img.pt",
+            emb_dir / "mention_img.pt",
+        ]
     missing = [str(p) for p in req if not p.exists()]
     if missing:
         raise FileNotFoundError(f"[{dataset}] missing:\n" + "\n".join(missing))
@@ -223,13 +235,25 @@ def run_dataset(
     }
     idx2qid = build_idx2qid(qid2idx)
 
-    et = torch.load(emb_dir / "entity_text.pt", map_location="cpu")
-    ei = torch.load(emb_dir / "entity_img.pt", map_location="cpu")
-    mt = torch.load(emb_dir / "mention_text.pt", map_location="cpu")
-    mi = torch.load(emb_dir / "mention_img.pt", map_location="cpu")
-
-    entity_emb = concat_norm(et.float(), ei.float())
-    mention_emb = concat_norm(mt.float(), mi.float())
+    if text_only:
+        et = torch.load(emb_dir / "entity_text.pt", map_location="cpu")
+        mt = torch.load(emb_dir / "mention_text.pt", map_location="cpu")
+        # run_embedding_clip_mel already L2-normalizes encoded text; eps avoids edge cases
+        entity_emb = F.normalize(et.float(), p=2, dim=1, eps=1e-12)
+        mention_emb = F.normalize(mt.float(), p=2, dim=1, eps=1e-12)
+    elif image_only:
+        ei = torch.load(emb_dir / "entity_img.pt", map_location="cpu")
+        mi = torch.load(emb_dir / "mention_img.pt", map_location="cpu")
+        # zeros = missing image; normalize with eps keeps zeros stable (no NaN)
+        entity_emb = F.normalize(ei.float(), p=2, dim=1, eps=1e-12)
+        mention_emb = F.normalize(mi.float(), p=2, dim=1, eps=1e-12)
+    else:
+        et = torch.load(emb_dir / "entity_text.pt", map_location="cpu")
+        mt = torch.load(emb_dir / "mention_text.pt", map_location="cpu")
+        ei = torch.load(emb_dir / "entity_img.pt", map_location="cpu")
+        mi = torch.load(emb_dir / "mention_img.pt", map_location="cpu")
+        entity_emb = concat_norm(et.float(), ei.float())
+        mention_emb = concat_norm(mt.float(), mi.float())
 
     mention_items = load_mention_splits(ds_root)
     if len(mention_items) != mention_emb.shape[0]:
@@ -278,16 +302,39 @@ def run_dataset(
         json.dump(metrics_all, f, ensure_ascii=False, indent=2)
     print(f"[{dataset}] saved {met_path}")
 
+    if text_only:
+        mode = "text-only"
+    elif image_only:
+        mode = "image-only"
+    else:
+        mode = "concat"
     for sk, met in metrics_all.items():
         h = " ".join([f"H@{k}={100 * met.get(f'hits@{k}', 0):.2f}" for k in k_values])
-        print(f"[{dataset}] {sk} ({met.get('split')}): {h}  MRR={100 * met['mrr']:.2f}  n={met['n']}")
+        print(f"[{dataset}] [{mode}] {sk} ({met.get('split')}): {h}  MRR={100 * met['mrr']:.2f}  n={met['n']}")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="CLIP concat retrieval (no training) for MEL datasets")
+    parser = argparse.ArgumentParser(
+        description="CLIP retrieval: concat, --text_only, or --image_only for MEL datasets"
+    )
     parser.add_argument("--data_root", type=str, default="data/raw")
     parser.add_argument("--embed_root", type=str, default="embedding_clip")
-    parser.add_argument("--out_root", type=str, default="results/clip_retrieve")
+    parser.add_argument(
+        "--out_root",
+        type=str,
+        default=None,
+        help="default: clip_retrieve / text_retrieve / image_retrieve by mode",
+    )
+    parser.add_argument(
+        "--text_only",
+        action="store_true",
+        help="Retrieve with CLIP text embeddings only (mention vs KB entity text)",
+    )
+    parser.add_argument(
+        "--image_only",
+        action="store_true",
+        help="Retrieve with CLIP image embeddings only (mention vs KB entity image)",
+    )
     parser.add_argument(
         "--dataset",
         type=str,
@@ -310,6 +357,9 @@ def main():
     )
     args = parser.parse_args()
 
+    if args.text_only and args.image_only:
+        parser.error("use at most one of --text_only and --image_only")
+
     if args.device == "auto":
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     else:
@@ -318,11 +368,24 @@ def main():
     k_values = [int(x.strip()) for x in args.k_values.split(",") if x.strip()]
     data_root = Path(args.data_root)
     embed_root = Path(args.embed_root)
-    out_root = Path(args.out_root)
+    if args.out_root is not None:
+        out_root = Path(args.out_root)
+    elif args.text_only:
+        out_root = Path("results/text_retrieve")
+    elif args.image_only:
+        out_root = Path("results/image_retrieve")
+    else:
+        out_root = Path("results/clip_retrieve")
 
     datasets = ["WikiMEL", "WikiDiverse", "RichpediaMEL"] if args.dataset == "all" else [args.dataset]
 
-    print(f"device={device}  num_candidates={args.num_candidates}  k_values={k_values}")
+    if args.text_only:
+        mode = "text-only"
+    elif args.image_only:
+        mode = "image-only"
+    else:
+        mode = "concat(text+image)"
+    print(f"mode={mode}  device={device}  out_root={out_root}  num_candidates={args.num_candidates}  k_values={k_values}")
     if args.device == "auto" and not torch.cuda.is_available():
         print("[note] CUDA not available; using CPU. Install CUDA-enabled PyTorch for GPU.")
 
@@ -337,6 +400,8 @@ def main():
                 batch_size=args.batch_size,
                 device=device,
                 k_values=k_values,
+                text_only=args.text_only,
+                image_only=args.image_only,
             )
         except Exception as e:
             print(f"[{ds}] FAILED: {e}")

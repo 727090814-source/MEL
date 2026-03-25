@@ -5,7 +5,7 @@ CLIP-style contrastive fusion on frozen concat CLIP embeddings (1024-d).
 WikiMEL: InfoNCE with negatives = entity rows for QIDs in candidate file that are
 NOT the gold answer (non-matching among top-K retrieved candidates).
 
-After training: project all mentions/entities, full-KB retrieval -> H@1, H@5, H@10, MRR.
+After training: project all mentions/entities, full-KB retrieval -> H@k (default includes 30, 100) and MRR.
 
 Example:
   python scripts/train_clip_fusion_contrastive.py \\
@@ -156,7 +156,7 @@ def run_fusion_training(
     max_negs: int = 100,
     device_str: str = "auto",
     retrieval_batch: int = 256,
-    k_values_str: str = "1,5,10",
+    k_values_str: str = "1,5,10,30,100",
     metrics_filename: str = "metrics_after_fusion.json",
     eval_splits: str = "all",
 ) -> Dict[str, dict]:
@@ -301,7 +301,7 @@ def run_fusion_training(
             device=device,
             batch_size=retrieval_batch,
             k_values=k_values,
-            num_candidates=16,
+            num_candidates=max(100, max(k_values)),
         )
         metrics_all[split_key[split_name]] = {**met, "split": split_name}
 
@@ -337,7 +337,7 @@ def main():
     parser.add_argument("--max_negs", type=int, default=100, help="Max negatives per sample from candidate pool")
     parser.add_argument("--device", type=str, default="auto")
     parser.add_argument("--retrieval_batch", type=int, default=256)
-    parser.add_argument("--k_values", type=str, default="1,5,10")
+    parser.add_argument("--k_values", type=str, default="1,5,10,30,100")
     parser.add_argument(
         "--eval_splits",
         type=str,

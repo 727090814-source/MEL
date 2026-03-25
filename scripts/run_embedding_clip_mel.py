@@ -15,7 +15,7 @@ embedding_clip/{dataset}/
 
 Paths are resolved from:
   data_root/{dataset}/kb_entity.json
-  data_root/{dataset}/kb_image/*
+  data_root/{dataset}/image/* or kb_image/* (uses first directory that exists)
   data_root/{dataset}/{train,dev,test}.json  (WikiMEL)
   or wiki_diverse_{train,dev,test}.json (WikiDiverse)
   or RichpediaMEL_{train,dev,test}.json (RichpediaMEL)
@@ -152,6 +152,58 @@ def encode_images(
     return torch.cat(outs, dim=0), image_ids
 
 
+def resolve_entity_image_dir(ds_root: Path) -> Path | None:
+    """Prefer ``image/``, then ``kb_image/`` for KB entity image files."""
+    for sub in ("image", "kb_image"):
+        d = ds_root / sub
+        if d.is_dir():
+            return d
+    return None
+
+
+def mel_project_root(ds_root: Path) -> Path:
+    """data/raw/<Dataset> -> project root (MEL)."""
+    return ds_root.parents[2]
+
+
+def resolve_mention_image_path(ds_root: Path, dataset: str, rel: str) -> Path | None:
+    """
+    Resolve mention image path: json may give only a basename while file lives under
+    mention_image/ or mention_images/ (RichpediaMEL, WikiDiverse), or under parallel
+    image/<Dataset>/... in the repo.
+    """
+    rel = (rel or "").strip()
+    if not rel:
+        return None
+    p = Path(rel)
+    mel = mel_project_root(ds_root)
+    candidates: List[Path] = []
+    if p.is_absolute():
+        candidates.append(p)
+    else:
+        base = p.name
+        candidates.extend(
+            [
+                ds_root / p,
+                ds_root / "mention_image" / base,
+                ds_root / "mention_images" / base,
+                ds_root / "mention_image" / "mention_image" / base,
+                ds_root / "mention_images" / "mention_images" / base,
+                mel / "image" / dataset / "mention_image" / base,
+                mel / "image" / dataset / "mention_images" / base,
+                mel / "image" / dataset / "mention_image" / "mention_image" / base,
+                mel / "image" / dataset / "mention_images" / "mention_images" / base,
+            ]
+        )
+    for c in candidates:
+        try:
+            if c.is_file():
+                return c
+        except OSError:
+            continue
+    return None
+
+
 def extract_qid_from_img_stem(stem: str) -> str | None:
     # expected: Q123_0 or Q123_1
     m = re.match(r"^(Q\d+)_", stem)
@@ -253,17 +305,8 @@ def main():
         m = str(item.get("mentions") or "")
         mention_texts.append(f"{m}: {sent}".strip())
 
-        # Prefer mention_image_path (relative to ds_root)
         rel = item.get("mention_image_path") or item.get("imgPath") or ""
-        if rel:
-            # rel might already be relative with backslashes
-            rel_path = Path(str(rel))
-            if rel_path.is_absolute():
-                mention_img_paths.append(rel_path)
-            else:
-                mention_img_paths.append(ds_root / rel_path)
-        else:
-            mention_img_paths.append(None)
+        mention_img_paths.append(resolve_mention_image_path(ds_root, args.dataset, str(rel)))
 
     (out_root / "mention_key2idx.json").write_text(
         json.dumps(mention_key2idx, ensure_ascii=False, indent=2),
@@ -285,10 +328,11 @@ def main():
     # 6) entity image embedding (optional)
     if not args.no_entity_img:
         print(f"[{args.dataset}] Encoding entity images ...")
-        kb_image_dir = ds_root / "kb_image"
-        if not kb_image_dir.exists():
-            print(f"[{args.dataset}] kb_image dir not found, skip entity images.")
+        kb_image_dir = resolve_entity_image_dir(ds_root)
+        if kb_image_dir is None:
+            print(f"[{args.dataset}] Neither image/ nor kb_image/ found under {ds_root}, skip entity images.")
         else:
+            print(f"[{args.dataset}] Entity image dir: {kb_image_dir}")
             image_paths = sorted(
                 [p for p in kb_image_dir.iterdir() if p.is_file() and p.suffix.lower() in [".jpg", ".jpeg", ".png"]]
             )
@@ -333,9 +377,8 @@ def main():
         for i, p in enumerate(mention_img_paths):
             if p is None:
                 continue
-            if p.exists():
-                valid_paths.append(p)
-                valid_indices.append(i)
+            valid_paths.append(p)
+            valid_indices.append(i)
 
         if valid_paths:
             img_embs, _ = encode_images(
