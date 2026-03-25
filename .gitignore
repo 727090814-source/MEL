@@ -1,9 +1,11 @@
-# 仅跟踪 embedding_clip、scripts、results；其余路径保持未跟踪
+# 跟踪 embedding_clip、indexed、scripts、results；其余路径保持未跟踪
 *
 !.gitignore
 !.gitattributes
 !embedding_clip/
 !embedding_clip/**
+!indexed/
+!indexed/**
 !scripts/
 !scripts/**
 !results/
